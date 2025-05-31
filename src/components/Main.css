@@ -134,7 +134,7 @@ body {
   animation: glow 3s ease-in-out infinite alternate;
 }
 
-/* Date Container */
+
 .date-container {
   margin-bottom: 2rem;
 }
@@ -166,7 +166,7 @@ body {
   opacity: 0.9;
 }
 
-/* Timer Section */
+
 .timer-section {
   margin-top: 2rem;
 }

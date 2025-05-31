@@ -77,7 +77,7 @@ const Main = () => {
     if (hour >= 5 && hour < 12) nextHour = 12;
     else if (hour >= 12 && hour < 17) nextHour = 17;
     else if (hour >= 17 && hour < 21) nextHour = 21;
-    else if (hour >= 21 || hour < 5) nextHour = hour < 5 ? 5 : 29; // 29 means 5 AM next day
+    else if (hour >= 21 || hour < 5) nextHour = hour < 5 ? 5 : 29; 
     
     const target = new Date();
     if (nextHour === 29) {
