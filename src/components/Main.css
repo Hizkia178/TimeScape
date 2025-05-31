@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+
+.greeting-section {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.greeting-icon {
+  font-size: 2.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.greeting-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.time-container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.time-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shine 3s ease-in-out infinite;
+}
+
+.time-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.time-icon {
+  font-size: 1.5rem;
+  animation: rotate 4s linear infinite;
+}
+
+.current-period {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0.3rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Time Display */
+.time-display {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.3);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 3px;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* Date Container */
+.date-container {
+  margin-bottom: 2rem;
+}
+
+.day-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.day-icon {
+  font-size: 1.8rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.day-display {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-transform: capitalize;
+}
+
+.date-display {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+}
+
+/* Timer Section */
+.timer-section {
+  margin-top: 2rem;
+}
+
+.timer-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.timer-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.timer-icon {
+  font-size: 1.3rem;
+  animation: tick 1s ease-in-out infinite;
+}
+
+.timer-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.timer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.next-period, .countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.arrow-icon {
+  animation: slideRight 2s ease-in-out infinite;
+}
+
+.countdown-text {
+  font-weight: 600;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.countdown-icon {
+  animation: rotate 2s linear infinite;
+}
+
+/* Status Indicators */
+.status-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.indicator-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.indicator-icon {
+  font-size: 1.2rem;
+}
+
+.rotating {
+  animation: rotate 2s linear infinite;
+}
+
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+  
+  .time-container {
+    padding: 2rem 1.5rem;
+    margin: 0 0.5rem 1.5rem;
+  }
+  
+  .time-display {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  
+  .day-display {
+    font-size: 1.8rem;
+  }
+  
+  .date-display {
+    font-size: 1rem;
+  }
+  
+  .greeting-text {
+    font-size: 1.4rem;
+  }
+  
+  .status-indicators {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .time-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .time-display {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .day-display {
+    font-size: 1.5rem;
+  }
+  
+  .greeting-icon {
+    font-size: 2rem;
+  }
+  
+  .greeting-text {
+    font-size: 1.2rem;
+  }
+  
+  .status-indicators {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .timer-info {
+    gap: 0.5rem;
+  }
+}
